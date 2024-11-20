@@ -151,7 +151,7 @@ pca_df2 <- data.frame(PC1 = pca_limma$x[, 1],
 
 
 # Plot PCA as previously done, using metadata$Batch for color
-pca_plot <- ggplot(pca_df2, aes(x = PC1, y = PC2, label = Sample, color = metadata$TimePoint)) +
+pca_plot <- ggplot(pca_df2, aes(x = PC1, y = PC2, label = Sample, color = metadata$Condition)) +
   geom_point(size = 3) +
   geom_text_repel(size = 3, box.padding = 0.5, point.padding = 0.5, max.overlaps = 10) +
   xlab(paste0("PC1: ", round(percentVar[1], 2), "% variance")) +
@@ -160,4 +160,4 @@ pca_plot <- ggplot(pca_df2, aes(x = PC1, y = PC2, label = Sample, color = metada
   theme_minimal()
 
 # Save the PCA plot
-ggsave("pca_plot_batch_corrected_limma_time_points_09.10.2024.pdf", plot = pca_plot, width = 10, height = 8)
+ggsave("pca_plot_batch_corrected_limma_time_points_08.11.2024.pdf", plot = pca_plot, width = 10, height = 8)
